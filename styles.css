@@ -7,6 +7,7 @@ html {
 :root {
     /* colors */
     --nav-blue: #1992D4;
+    --nav-blue-selected: #0076b6;
     --nav-grey: #E2E8F0;
     --nav-darkgrey: #333333;
     /* font sizes */
@@ -15,9 +16,12 @@ html {
     --title-2: 1.8rem;
     --title-3: 1.5rem;
     --title-4: 1.2rem;
+    --white-looks-large: 0.9;
     /* padding */
     --standard-pad: 18px;
     --double-pad: calc(var(--standard-pad)*2);
+    /* icon sizes */
+    --logo-size: 4.5rem;
 }
 
 * {
@@ -37,6 +41,10 @@ body {
     min-height: 100vh;
 }
 
+.container > :not(.sidebar) {
+    grid-column: 2/3;
+}
+
 /* Buttons, inputs, icons */
 
 button {
@@ -51,7 +59,7 @@ button {
 button.action {
     background-color: var(--nav-blue);
     color: white;
-    font-size: calc(var(--title-2)*0.9);
+    font-size: calc(var(--title-2)*var(--white-looks-large));
     font-weight: 700;
     width: 10rem;
     border-radius: 2rem;
@@ -81,8 +89,17 @@ input[type="search"]:focus-visible {
     height: 3.2rem;
 }
 
+img.white {
+    filter: invert(1);
+}
+
+img.logo {
+    height: var(--logo-size);
+}
+
 img.icon {
     height: 2.4rem;
+    justify-self: center;
 }
 
 .profile-icon {
@@ -99,15 +116,42 @@ img.icon {
     grid-column: 1/2;
     grid-row: 1/span 5;
     background-color: var(--nav-blue);
+    color: white;
+
+    padding: var(--standard-pad) 0px;
+    display: grid;
+    grid-auto-rows: var(--logo-size);
 }
 
-.container > :not(.sidebar) {
-    grid-column: 2/3;
+.sidebar .sidebar-item,
+.sidebar .sidebar-title {
+    display: grid;
+    padding: 0px var(--standard-pad);
+    grid-template-columns: var(--logo-size) 1fr;
+    align-items: center;
+    gap: var(--standard-pad);
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.sidebar .sidebar-item:hover {
+    background-color: var(--nav-blue-selected);
+    box-shadow: 0px 0px 4px 2px var(--nav-blue-selected);
+}
+
+.sidebar h1 {
+    font-size: var(--title);
+}
+
+.sidebar h2 {
+    font-size: calc(var(--title-1)*var(--white-looks-large));
+    font-weight: 700;
 }
 
 /* nav bar stuff; */
 
 .nav {
+    background-color: white;
     padding: var(--standard-pad) var(--double-pad);
     display: grid;
     grid-template-columns: 1fr max-content;
@@ -146,6 +190,7 @@ img.icon {
 /* action bar stuff */
 
 .action-bar {
+    background-color: white;
     padding: 0 var(--double-pad) var(--standard-pad);
     display: grid;
     grid-template-columns: repeat(2, max-content);
