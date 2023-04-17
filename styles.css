@@ -11,12 +11,12 @@ html {
     --nav-darkgrey: #333333;
     /* font sizes */
     --title: 2.4rem;
-    --title-1: 2.1rem;
+    --title-1: 2.3rem;
     --title-2: 1.8rem;
     --title-3: 1.5rem;
     --title-4: 1.2rem;
     /* padding */
-    --standard-pad: 15px;
+    --standard-pad: 18px;
     --double-pad: calc(var(--standard-pad)*2);
 }
 
@@ -45,6 +45,17 @@ button {
     background: none;
     border-style: none;
     cursor: pointer;
+    font-family: inherit;
+}
+
+button.action {
+    background-color: var(--nav-blue);
+    color: white;
+    font-size: calc(var(--title-2)*0.9);
+    font-weight: 700;
+    width: 10rem;
+    border-radius: 2rem;
+    height: 4rem;
 }
 
 /* clears the ‘X’ from Internet Explorer */
@@ -78,6 +89,10 @@ img.icon {
     height: 4.8rem;
 }
 
+.profile-icon.large {
+    height: 7rem;
+}
+
 /* sidebar stuff; */
 
 .sidebar {
@@ -98,7 +113,7 @@ img.icon {
     grid-template-columns: 1fr max-content;
     align-items: center;
     justify-content: space-between;
-    gap: 100px
+    gap: 100px;
 }
 
 .nav .search {
@@ -116,8 +131,46 @@ img.icon {
     padding: 0px var(--standard-pad);
 }
 
+.user-nav h1 {
+    font-size: var(--title-1);
+}
+
 .user-nav h2 {
     font-size: var(--title-2);
+}
+
+.user-nav h3 {
+    font-size: var(--title-4);
+}
+
+/* action bar stuff */
+
+.action-bar {
+    padding: 0 var(--double-pad) var(--standard-pad);
+    display: grid;
+    grid-template-columns: repeat(2, max-content);
+    align-items: center;
+    justify-content: space-between;
+    gap: 100px;
+}
+
+.action-bar .user-nav {
+    display: grid;
+    grid-template-columns: repeat(2, max-content);
+    gap: var(--standard-pad);
+    align-items: center;
+}
+
+.action-bar .user-nav .welcome-stack {
+    display: grid;
+    grid-template-rows: repeat(2, max-content);
+    gap: 0.2rem;
+}
+
+.action-bar .action-buttons {
+    display: grid;
+    gap: 25px;
+    grid-template-columns: repeat(3, max-content);
 }
 
 /* main stuff */
