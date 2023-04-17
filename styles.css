@@ -20,6 +20,7 @@ html {
     /* padding */
     --standard-pad: 18px;
     --double-pad: calc(var(--standard-pad)*2);
+    --sidebar: 81px;
     /* icon sizes */
     --logo-size: 4.5rem;
 }
@@ -35,10 +36,18 @@ body {
 }
 
 .container {
+    transition: 0.5s;
+    transition-timing-function: cubic-bezier(0.86, 0.26, 0.22, 0.88);
     display: grid;
     grid-template-rows: auto auto 1fr;
-    grid-template-columns: 1fr 4fr;
+    grid-template-columns: 81px 4fr;
     min-height: 100vh;
+
+}
+
+.container:has(.sidebar.activated)
+/*, .container:has(.sidebar:hover)*/ {
+    grid-template-columns: 320px 4fr;
 }
 
 .container > :not(.sidebar) {
@@ -121,6 +130,12 @@ img.icon {
     padding: var(--standard-pad) 0px;
     display: grid;
     grid-auto-rows: var(--logo-size);
+    overflow: hidden;
+}
+
+.sidebar.activated,
+.sidebar:hover {
+    overflow: unset;
 }
 
 .sidebar .sidebar-item,

@@ -9,8 +9,8 @@
 </head>
 <body>
     <div class="container">
-        <div class="sidebar">
-            <div class="sidebar-title">
+        <div class="sidebar toggle">
+            <div class="sidebar-title toggle">
                 <img src="./SVGs/view-dashboard.svg" alt="Dashboard logo" class="logo white">
                 <h1>Dashboard</h1>
             </div>
@@ -91,5 +91,15 @@
             <div class="content-side"></div>
         </div>
     </div>
+    <script>
+        const side = document.querySelectorAll(".toggle");
+        const sidebar = document.querySelector(".sidebar");
+        side.forEach((element) => {
+            element.addEventListener("click", function(event){
+                sidebar.classList.toggle("activated");
+                event.stopPropagation();
+            })
+        })
+    </script>
 </body>
 </html>
