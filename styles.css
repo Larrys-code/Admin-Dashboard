@@ -1,15 +1,33 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
 
-* {
+html {
+    font-size: 62.5%;
+}
+
+:root {
+    /* colors */
     --nav-blue: #1992D4;
     --nav-grey: #E2E8F0;
     --nav-darkgrey: #333333;
+    /* font sizes */
+    --title: 2.4rem;
+    --title-1: 2.1rem;
+    --title-2: 1.8rem;
+    --title-3: 1.5rem;
+    --title-4: 1.2rem;
+    /* padding */
+    --standard-pad: 15px;
+    --double-pad: calc(var(--standard-pad)*2);
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
 }
 
 body {
     font-family: Roboto, sans-serif;
-    margin: 0px;
-    padding: 0px;
+    font-size: 1.6rem;
 }
 
 .container {
@@ -19,10 +37,52 @@ body {
     min-height: 100vh;
 }
 
+/* Buttons, inputs, icons */
+
+button {
+    display: grid;
+    align-items: center;
+    background: none;
+    border-style: none;
+    cursor: pointer;
+}
+
+/* clears the ‘X’ from Internet Explorer */
+input[type=search]::-ms-clear { display: none; width : 0; height: 0; }
+input[type=search]::-ms-reveal { display: none; width : 0; height: 0; }
+/* clears the ‘X’ from Chrome */
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration { display: none; }
+
+input[type="search"],
+input[type="search"]:focus-visible {
+    font-family:inherit;
+    appearance: none;
+    background-color: var(--nav-grey);
+    border-style: none;
+    outline: none;
+    font-size: 2rem;
+    font-weight: 300;
+    padding: 0.8rem 1.6rem;
+    border-radius: 1.6rem;
+    height: 3.2rem;
+}
+
+img.icon {
+    height: 2.4rem;
+}
+
+.profile-icon {
+    height: 4.8rem;
+}
+
+/* sidebar stuff; */
+
 .sidebar {
     grid-column: 1/2;
     grid-row: 1/span 5;
-
     background-color: var(--nav-blue);
 }
 
@@ -30,7 +90,37 @@ body {
     grid-column: 2/3;
 }
 
+/* nav bar stuff; */
 
+.nav {
+    padding: var(--standard-pad) var(--double-pad);
+    display: grid;
+    grid-template-columns: 1fr max-content;
+    align-items: center;
+    justify-content: space-between;
+    gap: 100px
+}
+
+.nav .search {
+    display: grid;
+    grid-template-columns: max-content minmax(auto, 700px);
+    gap: 15px;
+    align-items: center;
+}
+
+.nav .user-nav {
+    display: grid;
+    grid-template-columns: repeat(3, max-content);
+    gap: 25px;
+    align-items: center;
+    padding: 0px var(--standard-pad);
+}
+
+.user-nav h2 {
+    font-size: var(--title-2);
+}
+
+/* main stuff */
 
 .main {
     background-color: var(--nav-grey);
