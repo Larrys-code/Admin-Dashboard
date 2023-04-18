@@ -26,8 +26,17 @@ html {
     --sidebar: 81px;
     /* icon sizes */
     --logo-size: 4.5rem;
+    --profile-size-small: 4.8rem;
 }
 
+hr {
+    border-top: 1px solid var(--nav-shadow);
+    border-bottom: 0px;
+    border-left: 1px solid rgba(0, 0, 0, 0);
+    border-right: 1px solid rgba(0, 0, 0, 0);
+    margin: var(--standard-pad) 0px;
+    transform: scaleX(1.05); 
+}
 
 h1 {
     font-size: var(--title-1);
@@ -149,7 +158,7 @@ img.icon {
 }
 
 .profile-icon {
-    height: 4.8rem;
+    height: var(--profile-size-small);
 }
 
 .profile-icon.large {
@@ -284,18 +293,21 @@ img.icon {
     display: grid;
     gap: var(--standard-pad);
     grid-template-columns: repeat(auto-fit, minmax(305px, 1fr));
-    grid-auto-rows: 170px;
+    grid-auto-rows: 175px;
 }
 
 .card {
+    padding: calc(var(--standard-pad) + 0.8rem);
     border-radius: 0.8rem;
+    box-shadow: 3px 3px 4px var(--nav-shadow);
     background-repeat: no-repeat;
     background-color: white;
+    display: grid;
+}
+
+.cards .card {
     background-image: linear-gradient(to right, #FACC15, #FACC15);
     background-size: 0.8rem auto;
-    padding: calc(var(--standard-pad) + 0.8rem);
-
-    display: grid;
     grid-template-rows: repeat(2, max-content);
     align-content: space-between;
 }
@@ -309,9 +321,14 @@ img.icon {
 }
 
 .text-block p {
+    padding-top: 0.2rem;
     color: var(--text-grey);
 }
 
 .text-block:has(h3) p {
     font-size: 1.4rem;
+}
+
+.text-block:has(h4) p {
+    font-size: 1.2rem;
 }
