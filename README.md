@@ -2,7 +2,7 @@
 <!-- PROJECT LOGO -->
 <div align="center">
 
-
+</ br>
 <h1 align="center">Admin Dashboard</h1>
 
   <p align="center">
@@ -43,10 +43,6 @@ This project was made to practice **using CSS Grid** as specified by [this lesso
 
 The main goal was to match the [design spec](./Reference/dashboard-project.png) as closely as possible whilst maintaining clean code and functionality.
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-
 ### Built With
 
 * [![CSS][CSS-logo]][CSS-url]
@@ -73,6 +69,8 @@ Additionally the [cat icon featured in the design spec](./Reference/dashboard-pr
 * This project was set by [*"The Odin Project"*](https://www.theodinproject.com/lessons/node-path-intermediate-html-and-css-admin-dashboard)
 * [*"Animating CSS Grid (How To + Examples)"* by Daniel Schwarz on CSS-Tricks.com](https://css-tricks.com/animating-css-grid-how-to-examples/) was used as a reference when constructing the dynamic sidebar.
 * The original illustration of the cat with a ball of yarn (used in both the original design spec and this recreation) was found at [pixabay.com attributed to LimoncitoSketching as "Free to use" under the Content Licence](https://pixabay.com/illustrations/cat-kitten-ball-pet-feline-4475583/)
+* UI icons sourced from the [*"Material Design Icons"* library](https://pictogrammers.com/library/mdi/)
+* User icons sourced from the [*"Landscape Circled Vectors Collection"* at svgrepo.com](https://www.svgrepo.com/collection/landscape-circled-vectors/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
