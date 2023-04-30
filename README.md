@@ -1,8 +1,9 @@
 <a name="readme-top"></a>
 <!-- PROJECT LOGO -->
+</ br>
 <div align="center">
 
-</ br>
+
 <h1 align="center">Admin Dashboard</h1>
 
   <p align="center">
